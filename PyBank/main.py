@@ -7,20 +7,23 @@ with open(pybank, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
 
-def financial_analysis(pybank):
-    date = str(pybank[0])
-    profit_loss = int(pybank[1])
+    revenue = []
+    date = []
+    rev_change[]
 
-    months = 
-    total = sum(profit_loss)
-    average_pl = sum(profit_loss) / len(profit_loss)
-    increase = 
-    decrease = 
+    revenue.append(float(row[1]))
+    date.append(row[0])
 
-    print(f"Financial Analysis")
-    print(f"----------------------------")
-    print(f"Total Months: {str(months)}")
-    print(f"Total: {str(total)}")
+    print("Financial Analysis")
+    print("----------------------------")
+    print(f"Total Months:" len(date))
+    print(f"Total:", sum(revenue))
+
+  for i in range(1,len(revenue)):
+      rev_change.append(revenue[i] - revenue[i - 1])
+      
+
+
     print(f"Average Change: {str(average_pl)}")
     print(f"Greatest Increase in Profits: {str(increase)}")
     print(f"Greatest Decrease in Profits: {str(decrease)}")
