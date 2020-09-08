@@ -1,23 +1,24 @@
 import os
 import csv
 
-pybank = os.path.join("..","Resources", "budget_data.csv")
+parent_dir = os.path.abspath(os.path.dirname(__file__))
+pybank = os.path.join(parent_dir, 'Resources','budget_data.csv')
 
 with open(pybank) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
 
-    revenue = []
-    date = []
-    rev_change = []
-
-    revenue.append(float(pybank[1]))
-    date.append(pybank[0])
+def print_results(pybank):
+    month = str(pybank[0])
+    profit_loss = float(pybank[1])
+    revenue = [2]
+    date = [3]
+    rev_change = [4]
 
     print("Financial Analysis")
     print("----------------------------")
-    print("Total Months:", len(date))
-    print("Total: $", sum(revenue))
+    print("Total Months:", len(month))
+    print("Total: $", sum(profit_loss))
 
     for i in range(1,len(revenue)):
         rev_change.append(revenue[i] - revenue[i - 1])
