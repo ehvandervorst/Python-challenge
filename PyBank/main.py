@@ -33,6 +33,11 @@ with open(pybank) as revenue_data:
     print("Greatest Increase in Profits:", max_rev_change_date, "($", max_rev_change,")")
     print("Greatest Decrease in Profits:", min_rev_change_date,"($", min_rev_change,")")
 
-file_output = os.path.join("..", "Analysis", "finance.txt")
-with open(file_output, "r") as datafile:
-    writer = txt.writer
+import sys
+import os.path
+
+orig = sys.stdout
+with open(os.path.join("Analysis", "finance.txt"), "wb") as f:
+    sys.stdout = f
+    execfile("main.py", {})
+    sys.stdout = orig

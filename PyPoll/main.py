@@ -21,6 +21,8 @@ with open(pypoll) as polling_data:
     print("Total Votes:", len(votes))
     print("-----------------")
 
+
+    print(candidates)
 # (number of votes) count instances of each candidate  
 # (percent of votes) divide each candidate's number of votes against len(votes)
 # (determine winner) winner is candidate with most votes
@@ -28,3 +30,12 @@ with open(pypoll) as polling_data:
     print("-----------------")
     print("Winner:")
     print("-----------------")
+
+#import sys
+#import os.path
+
+#orig = sys.stdout
+#with open(os.path.join("Analysis", "finance.txt"), "wb") as f:
+    #sys.stdout = f
+    #execfile("main.py", {})
+    #sys.stdout = orig
