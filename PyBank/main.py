@@ -33,3 +33,6 @@ with open(pybank) as revenue_data:
     print("Greatest Increase in Profits:", max_rev_change_date, "($", max_rev_change,")")
     print("Greatest Decrease in Profits:", min_rev_change_date,"($", min_rev_change,")")
 
+import sys
+with open("c:\\Desktop\\Python-challenge\\PyBank\\Analysis", "analysis.txt", "r") as f:
+    sys.stdout = f
