@@ -13,15 +13,18 @@ with open(pypoll) as polling_data:
 
     for row in reader:
         votes.append(float(row[0]))
-        candidate.append(row[2])
-
-    for i in range(1,len(votes)):
-        
-
+        if row[2] not in candidates:
+            candidates.append(row[2])
+    
     print("Election Results")
     print("-----------------")
     print("Total Votes:", len(votes))
     print("-----------------")
+
+# (number of votes) count instances of each candidate  
+# (percent of votes) divide each candidate's number of votes against len(votes)
+# (determine winner) winner is candidate with most votes
+    
     print("-----------------")
     print("Winner:")
     print("-----------------")
