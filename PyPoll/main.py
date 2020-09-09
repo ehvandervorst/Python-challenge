@@ -1,23 +1,27 @@
 import os
 import csv
 
-polling_data = os.path.join("Resources", "election_data.csv")
-with open(polling_data, 'r') as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=',')
-    header = next(csvreader)
+parent_dir = os.path.abspath(os.path.dirname(__file__))
+pypoll = os.path.join(parent_dir, "Resources", "election_data.csv")
 
-def print_data(polling_data):
-    votes = int(polling_data[0])
-    county = str(polling_data[1])
-    candidate = str(polling_data[2])
+with open(pypoll) as polling_data:
+    reader = csv.reader(polling_data, delimiter=',')
+    next(reader)
 
-    total_votes = 
-    all_candidate =
-    percent_votes = 
-    candidate_votes = 
-    winner = 
+    votes = []
+    candidates = []
 
-    print(f"Election Results")
-    print(f"Total Votes: {int(total_votes)}")
-    print
-    print(f"Winner: {str(winner)}")
+    for row in reader:
+        votes.append(float(row[0]))
+        candidate.append(row[2])
+
+    for i in range(1,len(votes)):
+        
+
+    print("Election Results")
+    print("-----------------")
+    print("Total Votes:", len(votes))
+    print("-----------------")
+    print("-----------------")
+    print("Winner:")
+    print("-----------------")
