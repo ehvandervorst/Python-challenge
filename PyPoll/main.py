@@ -20,9 +20,16 @@ with open(pypoll) as polling_data:
     print("Total Votes:", len(votes))
     print("-----------------")
 
+
     import collections
-    print(collections.Counter(candidates))
+    results = collections.Counter(candidates)
+    for key, val in results.items():
+        print('{}: ({})'.format(key,val))
     
+
+    from statistics import mode
+    winner = mode(candidates)
+    print(winner)
     #vote_percentage = vote_counts/len(votes)*100
     #winner = 
 # (number of votes) count instances of each candidate  
@@ -38,7 +45,7 @@ with open(pypoll) as polling_data:
 #import os.path
 
 #orig = sys.stdout
-#with open(os.path.join("Analysis", "finance.txt"), "wb") as f:
+#with open(os.path.join(parent_dir, "Analysis", "finance.txt"), "wb") as f:
     #sys.stdout = f
-    #execfile("main.py", {})
+    #exec(open("./main.py").read())
     #sys.stdout = orig
