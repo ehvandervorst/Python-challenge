@@ -16,23 +16,26 @@ with open(pypoll) as polling_data:
         candidates.append(row[2])
     
     print("Election Results")
-    print("-----------------")
+    print("--------------------")
     print("Total Votes:", len(votes))
-    print("-----------------")
+    print("--------------------")
 
     import collections
     results = collections.Counter(candidates)
     for key, val in results.items():
         print('{}: ({})'.format(key,val))
-    
+
+    total = sum(results.values())
+    percent = {key: value/total for key, value in results.items()}
+    print(percent)
+#how to incorporate percentage
+
     from statistics import mode
     winner = mode(candidates)
-    
-    #vote_percentage = vote_counts/len(votes)*100
   
-    print("-----------------")
+    print("--------------------")
     print(f"Winner: {winner}")
-    print("-----------------")
+    print("--------------------")
 
 #import sys
 #import os.path
