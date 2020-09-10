@@ -20,25 +20,18 @@ with open(pypoll) as polling_data:
     print("Total Votes:", len(votes))
     print("-----------------")
 
-
     import collections
     results = collections.Counter(candidates)
     for key, val in results.items():
         print('{}: ({})'.format(key,val))
     
-
     from statistics import mode
     winner = mode(candidates)
-    print(winner)
-    #vote_percentage = vote_counts/len(votes)*100
-    #winner = 
-# (number of votes) count instances of each candidate  
-# (percent of votes) divide each candidate's number of votes against len(votes)
-# (determine winner) winner is candidate with most votes
     
-    #print(list(vote_counts))
+    #vote_percentage = vote_counts/len(votes)*100
+  
     print("-----------------")
-    print("Winner:")
+    print(f"Winner: {winner}")
     print("-----------------")
 
 #import sys
